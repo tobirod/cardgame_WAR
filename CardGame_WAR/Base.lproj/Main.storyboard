@@ -174,8 +174,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6S-cZ-O5N" userLabel="blurEffect">
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6S-cZ-O5N" userLabel="blurEffect">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zjh-l0-YBl">
@@ -230,17 +231,12 @@
                         </subviews>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="O6S-cZ-O5N" secondAttribute="trailing" id="7D8-1b-RNs"/>
-                            <constraint firstItem="O6S-cZ-O5N" firstAttribute="leading" secondItem="UHq-b6-Z8N" secondAttribute="leadingMargin" id="I2F-oH-Nqe"/>
                             <constraint firstItem="LqS-9U-DSi" firstAttribute="centerY" secondItem="UHq-b6-Z8N" secondAttribute="centerY" id="dDd-iV-gPg"/>
-                            <constraint firstItem="O6S-cZ-O5N" firstAttribute="top" secondItem="bdp-9p-K94" secondAttribute="bottom" id="ndh-Bg-tOP"/>
-                            <constraint firstItem="FuX-r8-QoA" firstAttribute="top" secondItem="O6S-cZ-O5N" secondAttribute="bottom" id="phT-YW-usf"/>
                             <constraint firstItem="zjh-l0-YBl" firstAttribute="centerX" secondItem="UHq-b6-Z8N" secondAttribute="centerX" id="z6X-mY-IbB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blurView" destination="O6S-cZ-O5N" id="5gD-3t-Jwp"/>
-                        <outlet property="popUpStackView" destination="zjh-l0-YBl" id="QQt-Qj-ig0"/>
                         <outlet property="resultLabel" destination="Rib-mr-Fjb" id="UgH-j9-QGI"/>
                     </connections>
                 </viewController>
