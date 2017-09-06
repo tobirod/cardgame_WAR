@@ -10,16 +10,18 @@ import UIKit
 
 class PopUpViewController: UIViewController {
     
+    // A reference outlet to the label that shows who won the game
     @IBOutlet weak var winnerLabel: UILabel!
     
+    // The variable that is used to present the winner - the current value is the default message
     var winner = "What? Who won? Was it a tie? Aargh!"
 
+    // Method comparable to android onCreate - runs as soon as the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Sets the label with the variable winner
         winnerLabel.text = winner
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,21 +29,12 @@ class PopUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Function for restart button
     @IBAction func restartGame(_ sender: UIButton) {
         
+        // Simply dismisses popover
         dismiss(animated: true, completion: nil)
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
