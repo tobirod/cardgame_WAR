@@ -10,7 +10,7 @@ import UIKit
 
 class PopUpViewController: UIViewController {
     
-    // A reference outlet to the label that shows who won the game
+    // A reference outlet to the label presents the winner
     @IBOutlet weak var winnerLabel: UILabel!
     
     // The variable that is used to present the winner - the current value is the default message
@@ -19,6 +19,14 @@ class PopUpViewController: UIViewController {
     // Method comparable to android onCreate - runs as soon as the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        //let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        //blurEffectView.frame = view.bounds
+        //blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        //view.addSubview(blurEffectView)
         
         // Sets the label with the variable winner
         winnerLabel.text = winner
@@ -32,7 +40,7 @@ class PopUpViewController: UIViewController {
     // Function for restart button
     @IBAction func restartGame(_ sender: UIButton) {
         
-        // Simply dismisses popover
+        // Simply dismisses popover and returns to the former View
         dismiss(animated: true, completion: nil)
         
     }
