@@ -122,20 +122,22 @@ class ViewController: UIViewController {
             // If the player has a greater score than house...
             if playerScore > houseScore {
                 
-                // ... set winner
+                // ... set winning message
                 result = "Congratulations, you won!"
                 
             // If the house has a greater score than player...
             } else if houseScore > playerScore {
                 
-                // ... set winner
-                result = "Aww, too bad... Better luck next time!!"
+                // ... set losing message
+                result = "Aww, you lost... Better luck next time!"
                 
             // If the player and the house are tied, or something else has happened
-            } else {
+            } else if playerScore == houseScore{
                 
-                // ... set default text
-                result = "What? Who won? Was it a tie? Aargh!"
+                // ... set tie message
+                result = "What? A TIE? Aargh!"
+            } else {
+                result = "Wait, what happened? Strange..."
             }
             
             // Activating the segue shows the popup. Note that the variable winner is added, so it will be shown in the popup
