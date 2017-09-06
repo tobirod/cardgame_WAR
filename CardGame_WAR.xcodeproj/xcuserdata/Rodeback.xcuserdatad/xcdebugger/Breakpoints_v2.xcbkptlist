@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardGame_WAR/ViewController.swift"
-            timestampString = "526301738.933501"
+            timestampString = "526387001.720969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "updateTimer()"
             landmarkType = "7">
          </BreakpointContent>
