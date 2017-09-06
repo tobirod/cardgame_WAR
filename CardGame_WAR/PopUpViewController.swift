@@ -11,25 +11,33 @@ import UIKit
 class PopUpViewController: UIViewController {
     
     // A reference outlet to the label presents the winner
-    @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    // A reference outlet to the view handling the blur effect
+    @IBOutlet weak var blurView: UIView!
     
     // The variable that is used to present the winner - the current value is the default message
-    var winner = "What? Who won? Was it a tie? Aargh!"
+    var result = "What? Who won? Was it a tie? Aargh!"
 
     // Method comparable to android onCreate - runs as soon as the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        //let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        // Styling the blur effect
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         
-        //blurEffectView.frame = view.bounds
-        //blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // Applying the blur effect to a view
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
-        //view.addSubview(blurEffectView)
+        // Setting the size of the view
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // Adding the newly created blur effect view as a subview to my custom blurView
+        blurView.addSubview(blurEffectView)
         
         // Sets the label with the variable winner
-        winnerLabel.text = winner
+        resultLabel.text = result
     }
 
     override func didReceiveMemoryWarning() {

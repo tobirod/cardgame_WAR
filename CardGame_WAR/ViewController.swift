@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     var houseScore: Int = 0
     
     // An empty variable meant to be updated after game is ended
-    var winner: String = ""
+    var result: String = ""
     
     // Variable determining how many seconds the timer will run
     var seconds = 10
@@ -123,23 +123,23 @@ class ViewController: UIViewController {
             if playerScore > houseScore {
                 
                 // ... set winner
-                winner = "Congratulations, you won!"
+                result = "Congratulations, you won!"
                 
             // If the house has a greater score than player...
             } else if houseScore > playerScore {
                 
                 // ... set winner
-                winner = "Aww, too bad... Better luck next time!!"
+                result = "Aww, too bad... Better luck next time!!"
                 
             // If the player and the house are tied, or something else has happened
             } else {
                 
                 // ... set default text
-                winner = "What? Who won? Was it a tie? Aargh!"
+                result = "What? Who won? Was it a tie? Aargh!"
             }
             
             // Activating the segue shows the popup. Note that the variable winner is added, so it will be shown in the popup
-            self.performSegue(withIdentifier: "resultPopUp", sender: winner)
+            self.performSegue(withIdentifier: "resultPopUp", sender: result)
             
             // Reset all the variables to the original values
             seconds = 10
@@ -162,8 +162,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // If the segue destination is the class PopUpViewController (my custom popup) we set it's winner property to the sender, if the sender is of the type String
-        if let vc = segue.destination as? PopUpViewController, let winner = sender as? String {
-            vc.winner = winner
+        if let vc = segue.destination as? PopUpViewController, let result = sender as? String {
+            vc.result = result
         }
     }
 

@@ -155,7 +155,7 @@
                         <outlet property="playerLabel" destination="kzM-23-1o3" id="nPB-wd-qAB"/>
                         <outlet property="timerLabel" destination="U1D-lc-Pz7" id="0vQ-yn-QdI"/>
                         <outlet property="timerStackView" destination="piv-pf-ugJ" id="Cya-hO-Zuz"/>
-                        <segue destination="Q0a-G5-912" kind="presentation" identifier="resultPopUp" modalTransitionStyle="crossDissolve" id="KlV-Ud-k5d"/>
+                        <segue destination="Q0a-G5-912" kind="presentation" identifier="resultPopUp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="KlV-Ud-k5d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -174,6 +174,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6S-cZ-O5N" userLabel="blurEffect">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zjh-l0-YBl">
                                 <rect key="frame" x="26" y="221" width="323" height="225"/>
                                 <subviews>
@@ -197,7 +201,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.86356460489999998" green="0.84654732099999996" blue="0.86193159009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5Vv-kM-BSM" secondAttribute="trailing" constant="35" id="2Iu-t7-MeD"/>
                                             <constraint firstAttribute="width" secondItem="LqS-9U-DSi" secondAttribute="height" multiplier="323:225" id="C6Y-5m-xeE"/>
@@ -209,6 +213,11 @@
                                             <constraint firstItem="Rib-mr-Fjb" firstAttribute="leading" secondItem="LqS-9U-DSi" secondAttribute="leading" id="wJf-u7-Jda"/>
                                             <constraint firstItem="5Vv-kM-BSM" firstAttribute="top" secondItem="Rib-mr-Fjb" secondAttribute="bottom" constant="67" id="yKF-Bl-xpc"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -219,16 +228,25 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.24909220950704225" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="O6S-cZ-O5N" secondAttribute="trailing" id="7D8-1b-RNs"/>
+                            <constraint firstItem="O6S-cZ-O5N" firstAttribute="leading" secondItem="UHq-b6-Z8N" secondAttribute="leadingMargin" id="I2F-oH-Nqe"/>
                             <constraint firstItem="LqS-9U-DSi" firstAttribute="centerY" secondItem="UHq-b6-Z8N" secondAttribute="centerY" id="dDd-iV-gPg"/>
+                            <constraint firstItem="O6S-cZ-O5N" firstAttribute="top" secondItem="bdp-9p-K94" secondAttribute="bottom" id="ndh-Bg-tOP"/>
+                            <constraint firstItem="FuX-r8-QoA" firstAttribute="top" secondItem="O6S-cZ-O5N" secondAttribute="bottom" id="phT-YW-usf"/>
                             <constraint firstItem="zjh-l0-YBl" firstAttribute="centerX" secondItem="UHq-b6-Z8N" secondAttribute="centerX" id="z6X-mY-IbB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blurView" destination="O6S-cZ-O5N" id="5gD-3t-Jwp"/>
+                        <outlet property="popUpStackView" destination="zjh-l0-YBl" id="QQt-Qj-ig0"/>
+                        <outlet property="resultLabel" destination="Rib-mr-Fjb" id="UgH-j9-QGI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ph-ye-VGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="139"/>
+            <point key="canvasLocation" x="1069.5999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
